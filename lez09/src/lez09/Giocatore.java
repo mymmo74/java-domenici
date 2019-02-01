@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lez08;
+package lez09;
 
 /**
  *
  * @author tss
  */
-public class Lez08 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Giocatore {
     
 }

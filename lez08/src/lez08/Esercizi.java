@@ -15,7 +15,7 @@ public class Esercizi {
 //        int numVocali = contaVocali("saagjehdejh");
 //        System.out.println(numVocali);
         
-        boolean t=palindroma("fjfjfj");
+        boolean t=palindroma("abc");
     }
 
     /**
@@ -53,7 +53,7 @@ public class Esercizi {
         String amordnilap = "";
         
         for (int i = caratteri.length()-1; i >= 0; i--) {
-            amordnilap+= amordnilap.concat(Character.toString(caratteri.charAt(i)));
+            amordnilap= amordnilap.concat(Character.toString(caratteri.charAt(i)));
             
         }
         

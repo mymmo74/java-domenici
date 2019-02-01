@@ -13,7 +13,7 @@ public class Giacca {
     // public lo posso omettere perchè di default è public
     public int numeroTasche =4;
     
-    private boolean cappuccio=true;
+    private final boolean cappuccio=true;
     
     boolean zipAperta=true;
     
