@@ -1,8 +1,10 @@
+
 export default class Dado{
-        constructor{
-            
-        }
-        lancio(){
-            
-        }
+      constructor(){
+          
+      }
+      
+      lancio(){
+          return Math.floor(Math.random() * 6) +1;
+      }
 }
