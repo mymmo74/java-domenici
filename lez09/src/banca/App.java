@@ -24,7 +24,7 @@ public class App {
 
         System.out.println("----------------------------");
         for (int i = 0; i < cc.estrattoConto(4).size(); i++) {
-            Double movimento = cc.estrattoConto(4).get(i);
+            Movimento movimento = cc.estrattoConto(4).get(i);
              System.out.println(movimento);
         }
         System.out.println("----------------------------");
@@ -35,11 +35,14 @@ public class App {
         cc.estrattoConto(4).stream().forEach(movimento -> System.out.println(movimento));
     }
 
-    private static void stampaConto(ContoCorrente cc) {
+    public static void stampaConto(ContoCorrente cc) {
         System.out.println("----------------------------");
         System.out.println("numero:\t\t" + cc.getNumero());
         System.out.println("intestatario:\t" + cc.getIntestatario());
         System.out.println(String.format("saldo:\t\t%s", cc.getSaldo()));
+        cc.estrattoConto(5).stream().forEach(movimento -> {System.out.println(String.format("Data %s \t Tipo %s \t Importo %s", movimento.getData(),
+                movimento.getTipoMovimento(), movimento.getImporto()
+                });
         System.out.println("----------------------------");
     }
 }
