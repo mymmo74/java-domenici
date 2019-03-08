@@ -14,14 +14,17 @@ import java.io.IOException;
  *
  * @author tss
  */
-public class App {
+public class App1 {
 
     public static void main(String[] args) {
-        try (FileReader fr = new FileReader("/home/tss/esempio.txt");) {
+        // di solito si combinano le classi di lettura (FileReader legge da file, mentre
+        // BufferedReader ha un metodo che ad esempio legge i caratteri e restituisce quando trova un fine riga
+        try (BufferedReader br = new BufferedReader(new FileReader("/home/tss/esempio.txt"));) {
             
-            int carattere;
-            while ((carattere = fr.read()) != -1) {
-                System.out.println((char) (carattere));
+            String riga;
+            
+            while ((riga = br.readLine()) != null) {
+                System.out.println(riga);
             }
         } catch (FileNotFoundException ex) {
             System.out.println("file non trovato...");
