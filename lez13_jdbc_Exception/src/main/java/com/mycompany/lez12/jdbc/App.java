@@ -29,15 +29,15 @@ public class App {
                 Scanner scanner= new Scanner(System.in);
                 System.out.println("Inserisci le iniziali del cliente da cercare");
                 String ricerca = scanner.nextLine();
-                ResultSet risultato=DbManager.searchCustomerByName(cn, ricerca);
-                System.out.println("----------- Clienti trovati ---------------------------");
-                while (risultato.next()) {
-                    String name = risultato.getString("customerName");
-                    System.out.println(name);
-                    
-                }   risultato.close();
-                // Se metto più catch, devo metterle nell'ordine prima la più specifica e poi quelle più generiche
+                try (ResultSet risultato = DbManager.searchCustomerByName(cn, ricerca)) {
+                    System.out.println("----------- Clienti trovati ---------------------------");
+                    while (risultato.next()) {
+                        String name = risultato.getString("customerName");
+                        System.out.println(name);
+                    }
+                }
             }
+        // Se metto più catch, devo metterle nell'ordine prima la più specifica e poi quelle più generiche
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             System.out.println("Scusa ma qualcosa è andato storto nell'esecuzione della query!!!");
